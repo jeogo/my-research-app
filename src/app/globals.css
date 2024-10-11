@@ -2,26 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/* إعداد متغيرات الألوان */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent-color: #f59e0b; /* لون مخصص للنصوص والعناصر المميزة */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --accent-color: #ffb703; /* تعديل لون مميز للوضع المظلم */
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @layer utilities {
+  /* خاصية تخص توازن النصوص */
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* تخصيص اللون الخاص بالعناوين المميزة */
+  .text-accent {
+    color: var(--accent-color);
+  }
+
+  /* تخصيص الخلفيات المميزة */
+  .bg-accent {
+    background-color: var(--accent-color);
   }
 }
